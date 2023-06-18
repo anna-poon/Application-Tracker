@@ -34,7 +34,7 @@ def scrape_webpage(request):
             else:
                 store = "N/A"
 
-            price_element = soup.find('div', {'data-test': '@web/Price/PriceFull'})
+            price_element = soup.find('div', {'data-test':"@web/Price/PriceFull"})
             if price_element:
                 price = price_element.find('span', {'data-test': 'product-price'}).text.strip()
             else:

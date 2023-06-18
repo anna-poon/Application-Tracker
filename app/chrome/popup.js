@@ -24,11 +24,12 @@ document.addEventListener('DOMContentLoaded', function() {
           console.log('Scraped data:', response.data); // Log the scraped data
 
           // Set the scraped data in the input fields
-          urlInput.value = response.data.url || '';
-          itemNameInput.value = response.data.item_name || '';
-          storeInput.value = response.data.store || '';
-          priceInput.value = response.data.price || '';
-          ratingInput.value = response.data.rating || '';
+          document.getElementById('urlInput').value = response.data.url || '';
+          document.getElementById('itemNameInput').value = response.data.item_name || '';
+          document.getElementById('storeInput').value = response.data.store || '';
+          document.getElementById('priceInput').value = response.data.price || '';
+          document.getElementById('ratingInput').value = response.data.rating || '';
+
         } else {
           successMessage.textContent = '';
           errorMessage.textContent = 'Failed to scrape the page.';
@@ -50,6 +51,7 @@ document.addEventListener('DOMContentLoaded', function() {
     console.log('Store:', store);
     console.log('Price:', price);
     console.log('Rating:', rating);
+    
 
     // Make the post request to your Django application
     var xhr = new XMLHttpRequest();
